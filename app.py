@@ -87,50 +87,51 @@ def handle_message(event):
 
     # Location_Message = LocationSendMessage(title='my location', address='Tainan', latitude=22.994821, longitude=120.196452)
 
-    Imagemap_Message = ImagemapSendMessage(
-        base_url='',
-        alt_text='this is an imagemap',
-        base_size=BaseSize(height=520, width=520),
-        actions=[
-            URIImagemapAction(
-                link_uri='https://ithelp.ithome.com.tw/upload/images/20180103/20107144nFRc5tsPkp.png',
-                area=ImagemapArea(
-                    x=174, y=65, width=707, height=416
-                )
-            ),
-            MessageImagemapAction(
-                text='hello',
-                area=ImagemapArea(
-                    x=520, y=0, width=520, height=520
-                )
-            )
-        ]
-    )
-
-
-    # Buttons_Template = TemplateSendMessage(
-    #     alt_text='Buttons Template',
-    #     template=ButtonsTemplate(
-    #         title='這是ButtonsTemplate',
-    #         text='ButtonsTemplate可以傳送text,uri',
-    #         thumbnail_image_url='顯示在開頭的大圖片網址',
-    #         actions=[
-    #             MessageTemplateAction(
-    #                 label='ButtonsTemplate',
-    #                 text='ButtonsTemplate'
-    #             ),
-    #             URITemplateAction(
-    #                 label='VIDEO1',
-    #                 uri='影片網址'
-    #             ),
-    #             PostbackTemplateAction(
-    #                 label='postback',
-    #                 text='postback text',
-    #                 data='postback1'
+    # Imagemap_Message = ImagemapSendMessage(
+    #     base_url='',
+    #     alt_text='this is an imagemap',
+    #     base_size=BaseSize(height=520, width=520),
+    #     actions=[
+    #         URIImagemapAction(
+    #             link_uri='',
+    #             area=ImagemapArea(
+    #                 x=174, y=65, width=707, height=416
     #             )
-    #         ]
-    #     )
+    #         ),
+    #         MessageImagemapAction(
+    #             text='hello',
+    #             area=ImagemapArea(
+    #                 x=520, y=0, width=520, height=520
+    #             )
+    #         )
+    #     ]
     # )
+
+
+    Buttons_Template = TemplateSendMessage(
+        alt_text='Buttons Template',
+        template=ButtonsTemplate(
+            title='這是ButtonsTemplate',
+            text='ButtonsTemplate可以傳送text,uri',
+            #顯示在開頭的大圖片網址
+            thumbnail_image_url='https://upload.wikimedia.org/wikipedia/commons/9/91/Exo_monster_160618_suwon.png',
+            actions=[
+                MessageTemplateAction(
+                    label='ButtonsTemplate',
+                    text='ButtonsTemplate'
+                ),
+                URITemplateAction(
+                    label='VIDEO1',
+                    uri='https://www.youtube.com/watch?v=sPPGu5tnmtw' #影片網址
+                ),
+                PostbackTemplateAction(
+                    label='postback',
+                    text='postback text',
+                    data='postback1'
+                )
+            ]
+        )
+    )
 
       
     # Confirm_Template = TemplateSendMessage(
