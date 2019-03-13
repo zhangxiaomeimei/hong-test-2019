@@ -9,7 +9,7 @@ from linebot.exceptions import (
     InvalidSignatureError
 )
 from linebot.models import (
-    MessageEvent,TextMessage,TextSendMessage,StickerSendMessage,ImageSendMessage,TemplateSendMessage,ButtonsTemplate,PostbackTemplateAction
+    MessageEvent,TextMessage,TextSendMessage,ImageSendMessage,TemplateSendMessage,ButtonsTemplate,PostbackTemplateAction
 )
 import os
 app = Flask(__name__)
@@ -67,16 +67,11 @@ def handle_message(event):
         text2 = "林仁彥老師的專長為最佳化，辦公室在理工大樓八樓A16-815，辦公室電話05-271-7880。"
     if event.message.text.find("彭振昌")>=0:
         text2 = "彭振昌老師的專長為動態系統，辦公室在理工大樓八樓A16-822，辦公室電話05-271-7878。"
+ 
 
     message = TextSendMessage(text=text2) 
     
-    
-
-    message = StickerSendMessage(package_id=1,sticker_id=2) 
-    
-    message = ImageSendMessage(original_content_url='https://ithelp.ithome.com.tw/upload/images/20180103/20107144nFRc5tsPkp.png',preview_image_url='https://ithelp.ithome.com.tw/upload/images/20180103/20107144nFRc5tsPkp.png')
     replay_message(event,message)
-
  
 def replay_message(event,text):
     #text = 'According to your input, my answer is ' + text
@@ -89,6 +84,7 @@ def push_message(event,text):
     line_bot_api.reply_message(
         event.source.user_id,
         text)        
+
     
 if __name__ == "__main__":
     port = int(os.environ.get('PORT', 5000))
