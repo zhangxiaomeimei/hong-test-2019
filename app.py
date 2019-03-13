@@ -225,7 +225,7 @@ def handle_message(event):
     #     )
     # )
 
-    replay_message(event,Imagemap_Message)
+    replay_message(event,Buttons_Template)
 
  
 def replay_message(event,text):
