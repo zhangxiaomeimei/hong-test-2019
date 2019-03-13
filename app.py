@@ -108,30 +108,30 @@ def handle_message(event):
     # )
 
 
-    # Buttons_Template = TemplateSendMessage(
-    #     alt_text='Buttons Template',
-    #     template=ButtonsTemplate(
-    #         title='這是ButtonsTemplate',
-    #         text='ButtonsTemplate可以傳送text,uri',
-    #         #顯示在開頭的大圖片網址
-    #         thumbnail_image_url='https://upload.wikimedia.org/wikipedia/commons/9/91/Exo_monster_160618_suwon.png',
-    #         actions=[
-    #             MessageTemplateAction(
-    #                 label='ButtonsTemplate',
-    #                 text='ButtonsTemplate'
-    #             ),
-    #             URITemplateAction(
-    #                 label='VIDEO1',
-    #                 uri='https://www.youtube.com/watch?v=sPPGu5tnmtw' #影片網址
-    #             ),
-    #             PostbackTemplateAction(
-    #                 label='postback',
-    #                 text='postback text',
-    #                 data='postback1'
-    #             )
-    #         ]
-    #     )
-    # )
+    Buttons_Template = TemplateSendMessage(
+        alt_text='Buttons Template',
+        template=ButtonsTemplate(
+            title='這是ButtonsTemplate',
+            text='ButtonsTemplate可以傳送text,uri',
+            #顯示在開頭的大圖片網址
+            thumbnail_image_url='https://upload.wikimedia.org/wikipedia/commons/9/91/Exo_monster_160618_suwon.png',
+            actions=[
+                MessageTemplateAction(
+                    label='ButtonsTemplate',
+                    text='ButtonsTemplate'
+                ),
+                URITemplateAction(
+                    label='VIDEO1',
+                    uri='https://www.youtube.com/watch?v=sPPGu5tnmtw' #影片網址
+                ),
+                PostbackTemplateAction(
+                    label='postback',
+                    text='postback text',
+                    data='postback1'
+                )
+            ]
+        )
+    )
 
       
     # Confirm_Template = TemplateSendMessage(
