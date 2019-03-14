@@ -70,6 +70,8 @@ def handle_message(event):
         text2 = "林仁彥老師的專長為最佳化，辦公室在理工大樓八樓A16-815，辦公室電話05-271-7880。"
     if event.message.text.find("彭振昌")>=0:
         text2 = "彭振昌老師的專長為動態系統，辦公室在理工大樓八樓A16-822，辦公室電話05-271-7878。"
+    if event1.message.text.find("Hi")>=0 or event1.message.text.find("Hi")>=0 or event1.message.text.find("拜拜")>=0:
+        text2 = "謝謝您的詢問，希望有機會能再為您服務。"    
 
     
 
@@ -226,6 +228,7 @@ def handle_message(event):
     # )
 
     replay_message(event,Audio_Message)
+    replay_message(event1,Video_Message)
 
  
 def replay_message(event,text):
