@@ -45,6 +45,8 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     print(event)
+def handle_message(event1):
+    print(event1)    
     
     text2 = "According to your input, my answer is " + event.message.text
     
@@ -236,12 +238,22 @@ def replay_message(event,text):
     line_bot_api.reply_message(
         event.reply_token,
          text)
+def replay_message(event1,text):
+    #text = 'According to your input, my answer is ' + text
+    line_bot_api.reply_message(
+        event.reply_token,
+         text)    
         
 def push_message(event,text):
     #text = 'According to your input, my answer is ' + text
     line_bot_api.reply_message(
         event.source.user_id,
-        text)        
+        text) 
+def push_message(event1,text):
+    #text = 'According to your input, my answer is ' + text
+    line_bot_api.reply_message(
+        event.source.user_id,
+        text)               
     
 if __name__ == "__main__":
     port = int(os.environ.get('PORT', 5000))
