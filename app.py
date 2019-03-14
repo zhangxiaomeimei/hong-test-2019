@@ -45,9 +45,7 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     print(event)
-def handle_message(event1):
-    print(event1)    
-    
+
     text2 = "According to your input, my answer is " + event.message.text
     
     if event.message.text.find("bye")>=0 or event.message.text.find("Bye")>=0 or event.message.text.find("拜拜")>=0:
@@ -72,8 +70,7 @@ def handle_message(event1):
         text2 = "林仁彥老師的專長為最佳化，辦公室在理工大樓八樓A16-815，辦公室電話05-271-7880。"
     if event.message.text.find("彭振昌")>=0:
         text2 = "彭振昌老師的專長為動態系統，辦公室在理工大樓八樓A16-822，辦公室電話05-271-7878。"
-    if event1.message.text.find("Hi")>=0 or event1.message.text.find("Hi")>=0 or event1.message.text.find("拜拜")>=0:
-        text2 = "謝謝您的詢問，希望有機會能再為您服務。"    
+
 
     
 
@@ -230,7 +227,6 @@ def handle_message(event1):
     # )
 
     replay_message(event,Audio_Message)
-    replay_message(event1,Video_Message)
 
  
 def replay_message(event,text):
@@ -238,22 +234,13 @@ def replay_message(event,text):
     line_bot_api.reply_message(
         event.reply_token,
          text)
-def replay_message(event1,text):
-    #text = 'According to your input, my answer is ' + text
-    line_bot_api.reply_message(
-        event.reply_token,
-         text)    
         
 def push_message(event,text):
     #text = 'According to your input, my answer is ' + text
     line_bot_api.reply_message(
         event.source.user_id,
         text) 
-def push_message(event1,text):
-    #text = 'According to your input, my answer is ' + text
-    line_bot_api.reply_message(
-        event.source.user_id,
-        text)               
+  
     
 if __name__ == "__main__":
     port = int(os.environ.get('PORT', 5000))
