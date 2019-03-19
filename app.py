@@ -226,7 +226,7 @@ def handle_message(event):
     #     )
     # )
 
-    replay_message(event,Video_Message)
+    replay_message(event,Imagemap_Message)
 
  
 def replay_message(event,text):
